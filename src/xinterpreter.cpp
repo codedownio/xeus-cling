@@ -46,7 +46,7 @@ namespace xcpp
     }
 
     interpreter::interpreter(int argc, const char* const* argv)
-        : m_cling(argc, argv, LLVM_DIR), m_processor(m_cling, cling::errs()),
+        : m_cling(argc, argv, NULL), m_processor(m_cling, cling::errs()),
           m_version(get_stdopt(argc, argv)), // Extract C++ language standard version from command-line option
           xmagics(),
           p_cout_strbuf(nullptr), p_cerr_strbuf(nullptr),
